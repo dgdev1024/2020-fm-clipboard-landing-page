@@ -1,0 +1,177 @@
+@import '../../global.scss';
+
+@keyframes animate-logo-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in-hero {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes reveal-left-button {
+  to { opacity: 1; }
+}
+
+@keyframes reveal-right-button {
+  to { opacity: 1; }
+}
+
+@media #{$screen-small} {
+  @keyframes reveal-left-button {
+    to { 
+      opacity: 1;
+      left: 0px;
+    }
+  }
+
+  @keyframes reveal-right-button {
+    to { 
+      opacity: 1;
+      right: 0px;
+    }
+  }
+}
+
+.fm-hero-section {
+  height: 100vh;
+  min-height: 640px;
+  background-image: url('../../img/bg-header-mobile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media #{$screen-small} {
+    background-size: 100% 50%;
+  }
+
+  .container {
+    max-width: 550px; 
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    svg {
+      align-self: end;
+
+      g {
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation-name: animate-logo-path;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
+        }
+
+        circle {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation-name: animate-logo-path;
+          animation-duration: 2.5s;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    .fm-caption {
+      text-align: center;
+
+      h1 {
+        color: $color-dark-grayish-blue;
+        opacity: 0;
+        animation-name: fade-in-hero;
+        animation-delay: 0.5s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+
+      p {
+        padding-top: 24px;
+        padding-bottom: 32px;
+        font-size: 0.9em;
+        color: $color-grayish-blue;
+        line-height: 1.5em;
+        opacity: 0;
+        animation-name: fade-in-hero;
+        animation-delay: 1s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+
+        @media #{$screen-small} {
+          padding-bottom: 0px;
+        }
+      }
+    }
+
+    .fm-call-to-action {
+      align-self: start;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @media #{$screen-small} {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      button {
+        padding: 12px;
+        margin: 8px 0px;
+        border: none;
+        border-radius: 32px;
+        color: white;
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+        transition: $time-transition;
+        opacity: 0;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media #{$screen-small} {
+          margin: 0px 8px;
+          padding: 12px 24px;
+        }
+
+        &.fm-download-ios {
+          background-color: $color-strong-cyan;
+          animation-name: reveal-left-button;
+          animation-delay: 1.5s;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+
+          @media #{$screen-small} {
+            position: relative;
+            left: -50px;
+          }
+
+          &:hover {
+            background-color: $color-strong-cyan-hover;
+          }
+        }
+
+        &.fm-download-mac {
+          background-color: $color-light-blue;
+          animation-name: reveal-right-button;
+          animation-delay: 1.5s;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+
+          @media #{$screen-small} {
+            position: relative;
+            right: -50px;
+          }
+
+          &:hover {
+            background-color: $color-light-blue-hover;
+          }
+        }
+      }
+    }
+  }
+}

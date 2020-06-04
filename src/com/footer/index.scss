@@ -1,0 +1,93 @@
+@import '../../global.scss';
+
+footer {
+  background-color: rgba(0, 0, 0, 0.05);
+
+  .container {
+    padding: 32px 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+
+    @media #{$screen-small} {
+      grid-template-columns: auto 1fr auto;
+    }
+
+    .fm-logo {
+      position: relative;
+      width: 64px;
+      height: 64px;
+
+      svg {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    nav {
+      padding: 16px 0px;
+
+      @media #{$screen-medium} {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+
+      @media #{$screen-large} {
+        gap: 32px;
+      }
+
+      @media #{$screen-extra-large} {
+        gap: 48px;
+      }
+      
+      a {
+        display: block;
+        margin: 16px 0px;
+        text-align: center;
+        text-decoration: none;
+        color: $color-dark-grayish-blue;
+
+        @media #{$screen-medium} {
+          text-align: left;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .fm-social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        display: inline-block;
+        margin: 0px 12px;
+        text-decoration: none;
+        
+        svg path {
+          transition: $time-transition;
+        }
+
+        &#facebook:hover svg path {
+          fill: $color-facebook-blue;
+        }
+
+        &#twitter:hover svg path {
+          fill: $color-twitter-blue;
+        }
+
+        &#instagram:hover svg path {
+          fill: $color-instagram-red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// Google Font
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+// Variables
+$color-strong-cyan: hsl(171, 66%, 44%);
+$color-strong-cyan-hover: hsla(171, 66%, 44%, 0.692);
+$color-light-blue: hsl(233, 100%, 69%);
+$color-light-blue-hover: hsla(233, 100%, 69%, 0.692);
+$color-dark-grayish-blue: hsl(210, 10%, 33%);
+$color-grayish-blue: hsl(201, 11%, 66%);
+
+$color-facebook-blue: #3b5998;
+$color-twitter-blue: #1DA1F2;
+$color-instagram-red: #fb3958;
+
+$font-family-normal: 'Bai Jamjuree', sans-serif;
+$font-size-normal: 18px;
+$font-weight-normal: 400;
+$font-weight-semibold: 700;
+
+$screen-default: '(max-width: 599px)';
+$screen-small: '(min-width: 600px)';
+$screen-medium: '(min-width: 800px)';
+$screen-large: '(min-width: 1000px)';
+$screen-extra-large: '(min-width: 1200px)';
+
+$time-transition: 0.2s;
+
+button:focus {
+  outline: none;
+}
