@@ -33,9 +33,9 @@ const Footer = () => (
         </div>
       </nav>
       <div className="fm-social-links">
-        <a id="facebook" href="#"><FacebookIcon /></a>
-        <a id="twitter" href="#"><TwitterIcon /></a>
-        <a id="instagram" href="#"><InstagramIcon /></a>
+        <a id="facebook" href="#" aria-label="Facebook" title="Facebook"><FacebookIcon /></a>
+        <a id="twitter" href="#" aria-label="Twitter" title="Twitter"><TwitterIcon /></a>
+        <a id="instagram" href="#" aria-label="Instagram" title="Instagram"><InstagramIcon /></a>
       </div>
     </div>
   </footer>
